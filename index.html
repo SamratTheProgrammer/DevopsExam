@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f6f2">
+  <title>Northstar | Sign in</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="login-screen" id="loginView">
+    <section class="login-intro" aria-labelledby="introTitle">
+      <a class="brand" href="#login" aria-label="Northstar home">
+        <span class="brand-mark" aria-hidden="true">N</span>
+        <span>northstar</span>
+      </a>
+      <div class="intro-copy">
+        <p class="eyebrow">Your work, in focus</p>
+        <h1 id="introTitle">Make room for your best work.</h1>
+        <p>A calm place to keep projects moving and your team in sync.</p>
+      </div>
+      <p class="intro-footnote">A simple workspace demo</p>
+    </section>
+
+    <section class="login-area" aria-labelledby="loginTitle">
+      <form class="login-form" id="loginForm">
+        <div class="mobile-brand brand" aria-hidden="true">
+          <span class="brand-mark">N</span>
+          <span>northstar</span>
+        </div>
+        <p class="eyebrow">Welcome back</p>
+        <h2 id="loginTitle">Sign in to your workspace</h2>
+        <p class="form-subtitle">Use any email and password to preview the dashboard.</p>
+
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+
+        <div class="password-label">
+          <label for="password">Password</label>
+          <button class="text-button" id="togglePassword" type="button" aria-pressed="false">Show</button>
+        </div>
+        <input id="password" name="password" type="password" placeholder="Enter any password" autocomplete="current-password" required>
+
+        <p class="form-message" id="formMessage" role="alert" aria-live="polite"></p>
+        <button class="primary-button sign-in-button" type="submit">Sign in <span aria-hidden="true">&rarr;</span></button>
+        <p class="demo-note">Demo only. This page does not verify your identity.</p>
+      </form>
+    </section>
+  </main>
+
+  <div class="dashboard" id="dashboardView" hidden>
+    <aside class="sidebar">
+      <a class="brand sidebar-brand" href="#overview" aria-label="Northstar overview">
+        <span class="brand-mark" aria-hidden="true">N</span>
+        <span>northstar</span>
+      </a>
+      <p class="nav-label">Workspace</p>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-item is-active" type="button" data-view="overview"><span aria-hidden="true">&#9633;</span> Overview</button>
+        <button class="nav-item" type="button" data-view="projects"><span aria-hidden="true">&#9671;</span> Projects</button>
+        <button class="nav-item" type="button" data-view="team"><span aria-hidden="true">&#9825;</span> Team</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="profile-mini">
+          <span class="avatar" id="sidebarAvatar">A</span>
+          <span class="profile-email" id="sidebarEmail">Account</span>
+        </div>
+        <button class="nav-item sign-out" id="signOutButton" type="button"><span aria-hidden="true">&#8599;</span> Sign out</button>
+      </div>
+    </aside>
+
+    <main class="dashboard-main">
+      <header class="topbar">
+        <span class="workspace-name">Personal workspace <span aria-hidden="true">&#8964;</span></span>
+        <span class="today" id="today"></span>
+      </header>
+      <section class="dashboard-content" aria-live="polite">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow" id="pageEyebrow">Workspace</p>
+            <h1 id="pageTitle">Good morning</h1>
+            <p class="page-subtitle" id="pageSubtitle">Here is what is happening with your work.</p>
+          </div>
+          <button class="primary-button create-button" id="createButton" type="button"><span aria-hidden="true">+</span> New project</button>
+        </div>
+        <div id="viewContent"></div>
+      </section>
+    </main>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </div>
+</body>
+</html>
